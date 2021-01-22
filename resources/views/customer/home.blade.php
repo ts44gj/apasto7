@@ -15,11 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <div>
-    <a href="{{action('PostController@index')}}">post</a>
-</div>
 <div>
-    <a href="{{action('PostController@showTimeline')}}">timeline</a>
+    <a href="{{action('CustomerPostController@showTimeline')}}">timeline</a>
 </div>
 <div>
     <a href="{{action('ReservationController@index')}}">reservation</a>

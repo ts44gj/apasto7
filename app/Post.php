@@ -16,6 +16,8 @@ class Post extends Model
         'text'
     ];
 
+
+
     //public function targets(){
        // return $this->hasMany(Target::class);これでリレーションで扱えないか。。。
    // }
@@ -27,9 +29,6 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    //Postモデルでcommentを唱えるとPostのクラスを作ってコメントテーブルにアクセス
-    public function comments(){
-        return $this->hasMany(Comment::class);
-    }
+
 }
 

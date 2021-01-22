@@ -27,17 +27,25 @@ Route::prefix('customer')->namespace('Customer')->name('customer.')->group(funct
  Route::get('/home', 'CustomerHomeController@index')->name('customer_home');
 });
 
+
 //post作成画面へ遷移
 Route::get('/post/post','PostController@index');
 
-//post作成画面へ遷移
-Route::get('/customer/customer_post','PostController@index');
+//post作成して、画面遷移
+//Route::post('/post/post','PostController@post');
+Route::post('/post/post','PostController@post');
 
-//todoとdiary作成して、画面遷移
-Route::post('/customer/customer_post','PostController@post');
+//post作成画面へ遷移
+//Route::get('/customer/customer_post','PostController@index');
+
+//post作成して、画面遷移
+//Route::post('/customer/customer_post','PostController@post');
 
 //timelineを表示
-Route::get('/customer/customer_timeline','PostController@showTimeline')->name('showTimeline');
+Route::get('/post/timeline','PostController@showTimeline')->name('showTimeline');
+
+//customer_timelineを表示
+Route::get('/customer/customer_timeline','CustomerPostController@showTimeline')->name('showTimeline');
 
 Route::get('/customer/customer_reservation','ReservationController@index');
 
