@@ -35,6 +35,10 @@ Route::get('/post/post','PostController@index');
 //Route::post('/post/post','PostController@post');
 Route::post('/post/post','PostController@post');
 
+Route::get('/customer/customer_post','CustomerPostController@index');
+Route::post('/customer/customer_post','CustomerPostController@post');
+
+
 //post作成画面へ遷移
 //Route::get('/customer/customer_post','PostController@index');
 
@@ -42,10 +46,14 @@ Route::post('/post/post','PostController@post');
 //Route::post('/customer/customer_post','PostController@post');
 
 //timelineを表示
-Route::get('/post/timeline','PostController@showTimeline')->name('showTimeline');
+Route::get('/post/timeline/','PostController@showTimeline')->name('showTimeline');
 
 //customer_timelineを表示
 Route::get('/customer/customer_timeline','CustomerPostController@showTimeline')->name('showTimeline');
+
+//Route::get('/customer/customer_post','CustomerPostController@index');
+
+//Route::post('/customer/customer_post','CustomerPostController@post');
 
 Route::get('/customer/customer_reservation','ReservationController@index');
 

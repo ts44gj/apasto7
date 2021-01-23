@@ -28,6 +28,10 @@ class Post extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+        //Postモデルからuserを唱えるとユーザーにアクセスできる
+    public function customer(){
+        return $this->belongsTo(Customer::class);
+    }
 
 
 }

@@ -1,8 +1,3 @@
-
-@include('common.user_head')
-@include('common.user_navbar')
-
-
 @section('title','投稿')
 <a href="{{action('HomeController@index')}}">
      <button class="btn btn-danger" type="submit">user_home</button>
@@ -17,8 +12,7 @@
                         {{ csrf_field() }}
                         <h1>新しい投稿を作成しましょう</h1>
                                 <textarea name="text" placeholder=""></textarea>
-                                 <input type="hidden" name="user_id"  value="{{Auth::user()->id}}">
-                                     <input type="file" name="image_exterior">
+                                 <input type="hidden" name="customer_id"  value="{{Auth::customer()->id}}">
                                 <p><button class="btn btn-primary"type="submit">textを作成</button></p>
                     </form>
                 </div>

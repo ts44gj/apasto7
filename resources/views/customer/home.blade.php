@@ -19,6 +19,9 @@
     <a href="{{action('CustomerPostController@showTimeline')}}">timeline</a>
 </div>
 <div>
+    <a href="{{action('CustomerPostController@post')}}">post</a>
+</div>
+<div>
     <a href="{{action('ReservationController@index')}}">reservation</a>
 </div>
 <div>

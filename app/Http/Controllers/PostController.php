@@ -19,31 +19,29 @@ class PostController extends Controller
              $user = Auth::user();
              $user_id = Auth::id();
 
-        //todoがpostされた時
-             $textPost = $request->all();
-             Post::create($textPost);
+        //textがpostされた時
+            $textPost = $request->all();
+            Post::create($textPost);
          return view('home');
     }
 
-    public function showTimeline(User $user){
-        $user = User::find($user->id); //idが、リクエストされた$userのidと一致するuserを取得
-        $posts = Post::where('user_id', $user->id) //$userによる投稿を取得
-        ->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
-        ->paginate(10); // ページネーション;
-        return view('post.timeline', [
-        'user_name' => $user->name, // $user名をviewへ渡す
-        'posts' => $posts, // $userの書いた記事をviewへ渡す
-        ]);
-        }
+    //public function showTimeline(User $user){
+      //  $user = User::find($user->id); //idが、リクエストされた$userのidと一致するuserを取得
+        //$posts = Post::where('user_id', $user->id) //$userによる投稿を取得
+        //->orderBy('created_at', 'desc') // 投稿作成日が新しい順に並べる
+        //->paginate(10); // ページネーション;
+        //return view('post.timeline', [
+        //'user_name' => $user->name, // $user名をviewへ渡す
+        //'posts' => $posts, // $userの書いた記事をviewへ渡す
+        //]);
+        //}
 
 
     //タイムライン画面を表示
-    //public function showTimeline(User $user){
-      //  $posts=Post::all();
-        //$user = User::find($user->id); //idが、リクエストされた$userのidと一致するuserを取得
-        //$posts = Post::where('user_id', $user->id); //$userによる投稿を取得
+    public function showTimeline(User $user){
+        $posts=Post::all();
 
-        //return view('post.timeline',['posts' => $posts],);
-    //}
+        return view('post.timeline',['posts' => $posts],);
+    }
 
 }
